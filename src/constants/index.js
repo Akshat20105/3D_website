@@ -17,6 +17,7 @@ import {
   docker,
   meta,
   starbucks,
+  //gdc_iitk,
   tesla,
   shopify,
   carrent,
@@ -46,7 +47,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Unity Game Developer",
     icon: mobile,
   },
   {
@@ -54,7 +55,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "3D artist",
     icon: creator,
   },
 ];
