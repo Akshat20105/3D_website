@@ -17,6 +17,7 @@ import {
   docker,
   meta,
   starbucks,
+  //gdc_iitk,
   tesla,
 
   tripguide,
@@ -47,7 +48,7 @@ const services = [
     icon: web,
   },
   {
-    title: "Game Developer",
+    title: "Unity Game Developer",
     icon: mobile,
   },
   {
