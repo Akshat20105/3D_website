@@ -86,15 +86,14 @@
   word-wrap: break-word;
 }
 .chat-input{
-position: absolute;
+position: relative;
 /* bottom: 0; */
 display: flex;
-width: 100vh;
 margin: auto;
-/* padding: 20px 20px; */
 }
 .chat-input .chat-form{
   display: flex;
+  width:850px; 
   align-items: center;
   background: #f6F2ff;
   border-radius: 32px;
