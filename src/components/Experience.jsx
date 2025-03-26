@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-
+import React from "react";
 const ExperienceCard = ({experience}) =>  (
   <VerticalTimelineElement contentStyle={{background :'#1d1836' , color: '#fff'}} contentArrowStyle={{borderRight:'7px solid #232631',}}
   date={experience.date}

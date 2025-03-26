@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaEnvelope,FaGithub,FaPhone,FaLinkedin } from "react-icons/fa";
+import { FaEnvelope,FaGithub,FaPhone,FaLinkedin} from "react-icons/fa";
+import { FaRegFileLines } from "react-icons/fa6";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -103,6 +104,11 @@ const Contact = () => {
     <FaPhone className="text-white text-2xl" />
     <a href="tel:+91-964-826-4084" className="text-white text-sm">
       +91-964-826-4084
+    </a>
+  </div><div className="flex items-center gap-2">
+    <FaRegFileLines className="text-white text-2xl" />
+    <a href="https://1drv.ms/b/c/930EAA556B035C78/EUBayi3atIhMi3S2bv9jQbcBVwwcU9USvjBzZjjpv1kmQA?e=Zqgb3L" className="text-white text-sm">
+      Resume
     </a>
   </div>
 </div>
