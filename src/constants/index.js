@@ -18,11 +18,12 @@ import {
   meta,
   starbucks,
   tesla,
-  shopify,
-  carrent,
-  jobit,
+
   tripguide,
   threejs,
+  Akshara,
+  ignition,
+  temp,
 } from "../assets";
 
 export const navLinks = [
@@ -46,15 +47,15 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Game Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "3D Artist",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Civil Engineer",
     icon: creator,
   },
 ];
@@ -119,7 +120,7 @@ const experiences = [
     title: "Unity Game Developer",
     company_name: "Game Development Club, IIT Kanpur",
     icon: starbucks,
-    iconBg: "#383E56",
+    iconBg: "#CCCCCC",
     date: "June 2023 - March 2024",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -132,7 +133,7 @@ const experiences = [
     title: "3D Artist",
     company_name: "Design and Animation club, IIT Kanpur",
     icon: tesla,
-    iconBg: "#E6DEDD",
+    iconBg: "#FFFFFF",
     date: "June 2023 - March 2024",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
@@ -215,7 +216,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: ignition,
     source_code_link: "https://github.com/",
   },
   {
@@ -236,28 +237,29 @@ const projects = [
       //   color: "pink-text-gradient",
       // },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    // image: jobit,
+    image: Akshara,
+    source_code_link: "https://github.com/Akshat20105/ChessBot_IITK",
   },
   {
     name: "Temperature zones",
     description:
-      "It's an educational game for middle to high school students, teaching them about Earth's temperature zones through interactive exploration.",
+      "It's an educational game, developed for Vizuara, for middle to high school students, teaching them about Earth's temperature zones through interactive exploration.",
     tags: [
       {
-        name: "nextjs",
+        name: "Unity",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "C#",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Blender",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: temp,
     source_code_link: "https://github.com/",
   },
 ];

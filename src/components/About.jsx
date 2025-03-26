@@ -11,7 +11,7 @@ const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full emerald-blue-gradient p-[1px] rounded-[20px] shadow-card'
     >
       <div
         options={{
@@ -47,11 +47,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+       I'm a skilled game developer, 3D artist, and web developer with expertise in creating immersive gaming experiences and interactive websites. I specialize in game engines like Unity and Unreal Engine, 3D modeling and animation with Blender, and web development using JavaScript, TypeScript, and frameworks like React and Node.js. I thrive on turning creative ideas into dynamic, visually appealing, and scalable solutions. Whether it's building captivating games or designing intuitive websites, I collaborate closely with clients to bring their visions to life with precision and creativity.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

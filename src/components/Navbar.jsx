@@ -42,10 +42,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src={logo} alt='logo' className='w-9 h-9 object-contain rounded-full' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Akshat &nbsp;
-            <span className='sm:block hidden'> | 3D Artist and Game developer | 3rd year undergraduate student at IITK</span>
+            <span className='sm:block hidden'> | 3D Artist and Game developer | 3rd Year Undergrad at IIT Kanpur</span>
           </p>
         </Link>
 
