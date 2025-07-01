@@ -383,6 +383,22 @@
   margin: 8px 0;
 }
 
+/* Wrap code blocks in chat bubbles */
+.message pre, .message-text pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 0.97em;
+  background: #18122b;
+  color: #ffb86c;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 /* Make chat body vertical */
 .chatbot-body {
   display: flex;
@@ -413,6 +429,44 @@
   padding: 16px 20px;
   border-radius: 16px;
   max-width: 700px;
+  word-break: break-word;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  border: 1px solid #e0d7f3;
+}
+
+/* Make both user and assistant chat bubbles wider */
+.chatbot-body .model-message,
+.chatbot-body .user-message {
+  max-width: 90%; /* or 95% for even wider bubbles */
+  width: auto;
+}
+
+
+.chatbot-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;      /* Center chat bubbles horizontally */
+  width: 100%;              /* Ensure chat body takes full width of container */
+  padding: 25px 22px;
+  height: 460px;
+  margin-bottom: 80px;
+  overflow-y: auto;
+  background: #2d225300 !important;
+}
+
+.message,
+.model-message,
+.user-message,
+.chatbot-message {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fff !important;
+  color: #2d2253 !important;
+  max-width: 90%;           /* Prevent overflow */
+  width: auto;
+  box-sizing: border-box;
   word-break: break-word;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
   border: 1px solid #e0d7f3;

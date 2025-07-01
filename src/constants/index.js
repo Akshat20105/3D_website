@@ -124,10 +124,10 @@ const experiences = [
     iconBg: "#CCCCCC",
     date: "June 2023 - March 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and optimized interactive games using Unity and C# for both web and desktop platforms.",
+      "Implemented advanced gameplay mechanics, multiplayer networking, and responsive UI systems.",
+      "Collaborated with designers and artists to integrate assets and ensure a seamless user experience.",
+      "Led code reviews and mentored juniors on best practices in game development.",
     ],
   },
   {
@@ -137,10 +137,9 @@ const experiences = [
     iconBg: "#FFFFFF",
     date: "June 2023 - March 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and modeled high-quality 3D assets and environments for games and animations.",
+      "Specialized in character rigging, animation, and texturing using Blender and Unity.",
+      "Worked closely with developers to ensure smooth asset integration and visual consistency."
     ],
   },
   // {
