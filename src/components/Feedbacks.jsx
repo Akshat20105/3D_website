@@ -7,6 +7,7 @@ import { testimonials } from "../constants";
 import ChatBotIcon from "./ChatBotIcon";
 import ChatMessage from "./chatMessage";
 import ChatForm from "./ChatForm";
+import ReactMarkdown from "react-markdown";
 import.meta.env.VITE_API_URL;
 // const FeedbackCard = ({
 //   index,
@@ -47,22 +48,29 @@ import.meta.env.VITE_API_URL;
 
 const Feedbacks = () => {
   const [chatHistory,setchatHistory]=useState([]);
-  const generateResponse=async(history)=>{
+  const generateResponse=async(history,systemPrompt)=>{
     const updateHistory =(text)=>{
       setchatHistory(prev=>[...prev.filter(msg=>msg.text!=="typing..."),{role:"model",text}]);
     }
-    history=history.map(({role,text})=>({role,parts:[{text}]}));
+    // Prepend systemPrompt as a user message for context
+    const contents = [
+      { role: "user", parts: [{ text: systemPrompt }] },
+      ...history.map(({ role, text }) => ({ role, parts: [{ text }] }))
+    ];
+
     const requestOptions={
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({contents: history})
+      body: JSON.stringify({
+        contents
+      })
     };
     try {
       const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
       const data = await response.json();
-      if(!response.ok) throw new Error(data.Error.message || "Something went wrong!");
+      if(!response.ok) throw new Error((data.error && data.error.message) || data.message || "Something went wrong!");
       const apiResponsetxt= data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g,"$1").trim();
       updateHistory(apiResponsetxt);
       console.log(data);
@@ -75,20 +83,57 @@ const Feedbacks = () => {
      
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[30vh] w-full min-w-[120vh] mx-auto`}>
-         <motion.div variants={fadeIn("left", "tween", 0.2, 1)}>
+         <motion.div>
        
         <ChatBotIcon/><h2 className={styles.sectionHeadText}>Akshara.</h2>
           <p className={styles.sectionSubText}>A ChatBot powered by Gemini</p>
           
           <div className="chatbot-body">
-                <div className="message chatbot-message">
-                <ChatBotIcon/>
-                  <p className="text-black chat">Hi! I am Akshara. <br/>How can I help you?</p>
-                </div>
-                {chatHistory.map((chat,index)=>(
-                  <ChatMessage key={index} chat={chat}/>
-                ))}
-                </div>
+  <div className="message chatbot-message">
+    <span style={{
+      background: "#6d4fc2",
+      borderRadius: "50%",
+      width: "38px",
+      height: "38px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginRight: "12px"
+    }}>
+      <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
+    </span>
+    <div className="message-text">
+      <p>Hi! I am Akshara.<br />How can I help you?</p>
+    </div>
+  </div>
+  {chatHistory.map((chat, index) => (
+    chat.role === "model" ? (
+      <div key={index} className="message model-message">
+        <span style={{
+          background: "#6d4fc2",
+          borderRadius: "50%",
+          width: "38px",
+          height: "38px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginRight: "12px"
+        }}>
+          <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
+        </span>
+        <div className="message-text">
+          <ReactMarkdown>{chat.text}</ReactMarkdown>
+        </div>
+      </div>
+    ) : (
+      <div key={index} className="message user-message" style={{ justifyContent: "flex-end" }}>
+        <div className="message-text">
+          <ReactMarkdown>{chat.text}</ReactMarkdown>
+        </div>
+      </div>
+    )
+  ))}
+</div>
                 <div className="chat-input">
                   <ChatForm 
                     chatHistory={chatHistory} 
