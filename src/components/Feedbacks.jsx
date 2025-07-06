@@ -47,8 +47,8 @@ import.meta.env.VITE_API_URL;
 // );
 
 const Feedbacks = () => {
-  const [chatHistory,setchatHistory]=useState([]);
-  const generateResponse=async(history,systemPrompt)=>{
+  const [chatHistory, setchatHistory] = useState([]);
+  const generateResponse = async (history, systemPrompt) => {
     const updateHistory =(text)=>{
       setchatHistory(prev=>[...prev.filter(msg=>msg.text!=="typing..."),{role:"model",text}]);
     }
@@ -78,73 +78,75 @@ const Feedbacks = () => {
       console.log(error);
     }
   }
+
   return (
-    <div className="Feedbacks">
-     
+    <div className="Feedbacks xl:mt-2 flex xl:flex-row gap-10 overflow-hidden items-center justify-center min-h-screen w-full">
       <div
-        className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[30vh] w-full min-w-[120vh] mx-auto`}>
-         <motion.div>
-       
-        <ChatBotIcon/><h2 className={styles.sectionHeadText}>Akshara.</h2>
-          <p className={styles.sectionSubText}>A ChatBot powered by Gemini</p>
-          
-          <div className="chatbot-body">
-  <div className="message chatbot-message">
-    <span style={{
-      background: "#6d4fc2",
-      borderRadius: "50%",
-      width: "38px",
-      height: "38px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      marginRight: "12px"
-    }}>
-      <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
-    </span>
-    <div className="message-text">
-      <p>Hi! I am Akshara.<br />How can I help you?</p>
-    </div>
-  </div>
-  {chatHistory.map((chat, index) => (
-    chat.role === "model" ? (
-      <div key={index} className="message model-message">
-        <span style={{
-          background: "#6d4fc2",
-          borderRadius: "50%",
-          width: "38px",
-          height: "38px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginRight: "12px"
-        }}>
-          <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
-        </span>
-        <div className="message-text">
-          <ReactMarkdown>{chat.text}</ReactMarkdown>
-        </div>
-      </div>
-    ) : (
-      <div key={index} className="message user-message" style={{ justifyContent: "flex-end" }}>
-        <div className="message-text">
-          <ReactMarkdown>{chat.text}</ReactMarkdown>
-        </div>
-      </div>
-    )
-  ))}
-</div>
-                <div className="chat-input">
-                  <ChatForm 
-                    chatHistory={chatHistory} 
-                    generateResponse={generateResponse} 
-                    setchatHistory={setchatHistory} 
-                    className="w-full"
-                  />
+        className="bg-tertiary rounded-2xl w-full max-w-4xl mx-auto shadow-xl p-6 flex flex-col items-center"
+        style={{ minHeight: "30vh" }}
+      >
+        <motion.div className="w-full flex flex-col items-center">
+          <div className="flex flex-col items-center mb-4">
+            <ChatBotIcon style={{ width: "48px", height: "48px", marginBottom: "8px" }} />
+            <h2 className={styles.sectionHeadText + " text-center"}>Akshara.</h2>
+            <p className={styles.sectionSubText + " text-center"}>A ChatBot powered by Gemini</p>
+          </div>
+          <div className="chatbot-body w-full flex flex-col items-center">
+            <div className="message model-message w-full flex items-start">
+              <span style={{
+                background: "#6d4fc2",
+                borderRadius: "50%",
+                width: "38px",
+                height: "38px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginRight: "12px"
+              }}>
+                <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
+              </span>
+              <div className="message-text">
+                <p>Hi! I am Akshara.<br />How can I help you?</p>
+              </div>
+            </div>
+            {chatHistory.map((chat, index) => (
+              chat.role === "model" ? (
+                <div key={index} className="message model-message w-full flex items-start">
+                  <span style={{
+                    background: "#6d4fc2",
+                    borderRadius: "50%",
+                    width: "38px",
+                    height: "38px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: "12px"
+                  }}>
+                    <ChatBotIcon style={{ width: "22px", height: "22px", fill: "#fff" }} />
+                  </span>
+                  <div className="message-text">
+                    <ReactMarkdown>{chat.text}</ReactMarkdown>
+                  </div>
                 </div>
+              ) : (
+                <div key={index} className="message user-message w-full flex justify-end">
+                  <div className="message-text">
+                    <ReactMarkdown>{chat.text}</ReactMarkdown>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+          <div className="chat-input w-full mt-4">
+            <ChatForm
+              chatHistory={chatHistory}
+              generateResponse={generateResponse}
+              setchatHistory={setchatHistory}
+              className="w-full"
+            />
+          </div>
         </motion.div>
       </div>
-
     </div>
   );
 };
