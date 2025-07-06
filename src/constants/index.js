@@ -17,14 +17,13 @@ import {
   docker,
   meta,
   starbucks,
-  //gdc_iitk,
   tesla,
-
-  tripguide,
+  bluestock,
   threejs,
   Akshara,
   ignition,
   temp,
+  kookar,
 } from "../assets";
 
 export const navLinks = [
@@ -142,32 +141,32 @@ const experiences = [
       "Worked closely with developers to ensure smooth asset integration and visual consistency."
     ],
   },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  {
+    title: "Web Developer",
+    company_name: "Blustock Pvt. Ltd.",
+    icon: bluestock,
+    iconBg: "#FFFFFF",
+    date: "Apr 2025 - Jun 2025",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Delegating tasks as a Team Lead and managing project timelines to ensure timely delivery of features.",
+    ],
+  },
+  {
+    title: "Product Analyst",
+    company_name: "Kookar AI",
+    icon: kookar,
+    iconBg: "#E6DEDD",
+    date: "May 2025 - Aug 2025",
+    points: [
+      "Analyzing user data and product performance to identify areas for improvement.",
+      "Collaborating with product managers and developers to define product requirements and specifications.",
+      "Setting up and maintaining data pipelines for real-time analytics.",
+      "Conducting A/B testing and user research to validate product hypotheses.",
+    ],
+  },
 ];
 
 const testimonials = [

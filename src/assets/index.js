@@ -30,6 +30,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import ignition from "./ignition.png";
+import bluestock from "./company/bluestock.png";
+import kookar from "./company/kookar.png";
 
 export {
   logo,
@@ -63,4 +65,6 @@ export {
   Akshara,
   ignition,
   temp,
+  bluestock,
+  kookar,
 };
